@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Basics Assignment</title>
+</head>
+<body>
+  <h1>Open the Console to View Output</h1>
+  <script>
+    // ✅ 1. Variable and Data Types
+    let name = "Bhargav";           
+    const age = 21;                 
+    var isStudent = true;          
+    let country;                   
+    let marks = null;              
+
+    console.log("Data Types:");
+    console.log(typeof name);      
+    console.log(typeof age);       
+    console.log(typeof isStudent); 
+    console.log(typeof country);   
+    console.log(typeof marks);     
+
+    // ✅ 2. Hoisting Demo
+    console.log("\nHoisting Demo:");
+    console.log(x);  // undefined
+    var x = 10;
+
+    try {
+      console.log(y); // ReferenceError
+      let y = 20;
+    } catch (err) {
+      console.log("Error:", err.message);
+    }
+
+    // ✅ 3. User Greeting (Conditionals)
+    let userName = prompt("Enter your name:");
+    let userAge = parseInt(prompt("Enter your age:"));
+
+    if (userAge < 18) {
+      alert(`Hey ${userName}, you’re a teen!`);
+    } else if (userAge <= 60) {
+      alert(`Welcome ${userName}, you’re an adult!`);
+    } else {
+      alert(`Hello ${userName}, you’re a senior citizen!`);
+    }
+
+    // ✅ 4. Looping Numbers
+    console.log("\nLooping Numbers:");
+
+    // for loop: 1 to 10
+    for (let i = 1; i <= 10; i++) {
+      console.log("for:", i);
+    }
+
+    // while loop: even numbers from 2 to 20
+    let even = 2;
+    while (even <= 20) {
+      console.log("while:", even);
+      even += 2;
+    }
+
+    // do...while loop: 10 to 1
+    let count = 10;
+    do {
+      console.log("do...while:", count);
+      count--;
+    } while (count >= 1);
+
+    // ✅ 5. Functions
+    console.log("\nFunctions:");
+
+    function add(a, b) {
+      return a + b;
+    }
+
+    const square = function(n) {
+      return n * n;
+    };
+
+    const greet = (name) => `Hello, ${name}!`;
+
+    console.log("Sum:", add(5, 7));
+    console.log("Square:", square(4));
+    console.log(greet("Saksham"));
+
+    // ✅ 6. Callback Practice
+    console.log("\nCallback:");
+
+    function processNumber(num, callback) {
+      callback(num);
+    }
+
+    processNumber(5, function(n) {
+      console.log("Double is", n * 2);
+    });
+
+    // 🏁 BONUS: Mini Calculator
+    let num1 = parseFloat(prompt("Enter first number:"));
+    let num2 = parseFloat(prompt("Enter second number:"));
+    let operator = prompt("Choose operation: +, -, *, /");
+
+    let result;
+    switch (operator) {
+      case "+":
+        result = num1 + num2;
+        break;
+      case "-":
+        result = num1 - num2;
+        break;
+      case "*":
+        result = num1 * num2;
+        break;
+      case "/":
+        result = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+        break;
+      default:
+        result = "Invalid operator";
+    }
+
+    alert(`Result: ${result}`);
+  </script>
+</body>
+</html>
